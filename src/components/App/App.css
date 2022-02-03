@@ -1,0 +1,47 @@
+.root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vw;
+    width: 100vh;
+}
+
+.app {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-boards {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+    align-items: stretch;
+    background-color: grey;
+}
+
+.board {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: lightgrey;
+    margin: 5px;
+    padding: 5px;
+}
+
+.performance {
+    font-size: 5vw;
+}
+
+.heading {
+    font: bold;
+}

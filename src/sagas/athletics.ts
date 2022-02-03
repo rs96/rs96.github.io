@@ -9,22 +9,22 @@ const testPerformances: Performance[] = [
         value: 54.32,
         event: "Hammer",
         location: "South Shields",
-        position: "1",
-        date: 1643813832,
+        position: 1,
+        date: 1643613832,
     },
     {
         value: 6.13,
         event: "Long Jump",
         location: "Gateshead",
-        position: "1",
-        date: 1643810732,
+        position: 1,
+        date: 1632810732,
     },
     {
         value: 11.32,
         event: "100m",
         location: "York",
-        position: "2",
-        date: 1643821032,
+        position: 2,
+        date: 1623821032,
     },
 ];
 const testRankings: Ranking[] = [

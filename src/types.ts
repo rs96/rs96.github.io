@@ -3,7 +3,7 @@ export interface Performance {
     value: number;
     event: string;
     location: string;
-    position: string;
+    position: number;
     date: number;
 }
 
@@ -11,6 +11,8 @@ export interface Ranking {
     event: string;
     rank: number;
 }
+
+// export type MeasuredEvent = "Hammer" | "High Jump" | "Long Jump" | "";
 
 // app state types
 export interface IAthleticsState {

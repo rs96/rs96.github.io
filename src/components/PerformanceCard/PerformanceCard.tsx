@@ -1,4 +1,5 @@
 import { Performance } from "../../types";
+import { ordinalFormat, formatDate, formatPerformance } from "../../utils";
 
 interface IProps {
     performance: Performance;
@@ -7,12 +8,12 @@ interface IProps {
 const PerformanceCard = ({ performance }: IProps) => {
     const { value, event, location, position, date } = performance;
     return (
-        <div className="performance-card">
-            <div className="performance">{value}</div>
+        <div className="performance-card card">
             <div className="event">{event}</div>
+            <div className="performance">{formatPerformance(value, event)}</div>
+            <div className="position">{ordinalFormat(position)}</div>
             <div className="location">{location}</div>
-            <div className="position">{position}</div>
-            <div className="date">{date}</div>
+            <div className="date">{formatDate(date)}</div>
         </div>
     );
 };

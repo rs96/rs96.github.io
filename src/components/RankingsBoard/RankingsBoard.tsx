@@ -5,11 +5,15 @@ import RankingCard from "../RankingCard/RankingCard";
 const RankingsBoard = () => {
     const rankings = useSelector(selectors.getRankings);
     return (
-        <div className="rankings-board board">
-            {rankings.map((ranking) => {
-                // @ts-ignore
-                return <RankingCard ranking={ranking} />;
-            })}
+        <div className="rankings-board">
+            <div className="heading">Season Rankings</div>
+            <div className="board">
+                {rankings.map((ranking, index) => (
+                    <div key={index}>
+                        <RankingCard ranking={ranking} />
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
