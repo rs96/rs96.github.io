@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import Header from "./components/Heading/Heading";
 import "./App.css";
-import ResultsBoard from "./components/ResultsBoard/ResultsBoard";
+import PerformancesBoard from "./components/PerformancesBoard/PerformancesBoard";
+import RankingsBoard from "./components/RankingsBoard/RankingsBoard";
 import { fetchInitialData } from "./actions/initialData";
 import { useDispatch } from "react-redux";
 
@@ -13,7 +14,10 @@ const App = () => {
     return (
         <div className="app">
             <Header text="rs96.github.io" />
-            <ResultsBoard />
+            <div className="info-boards">
+                <PerformancesBoard />
+                <RankingsBoard />
+            </div>
         </div>
     );
 };

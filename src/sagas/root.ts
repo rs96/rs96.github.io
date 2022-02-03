@@ -1,7 +1,7 @@
 import { all, spawn } from "redux-saga/effects";
-import rankings from "./rankings";
+import athletics from "./athletics";
 
-const getSagas = () => [...rankings];
+const getSagas = () => [...athletics];
 
 export default function* rootSaga() {
     yield all(getSagas().map(spawn));

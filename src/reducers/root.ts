@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import rankings from "./rankings";
+import athletics from "./athletics";
 
-const root = combineReducers({ rankings });
+const root = combineReducers({ athletics });
 
 export default root;

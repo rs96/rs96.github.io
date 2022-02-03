@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import * as rankingsSelectors from "../../selectors/rankings";
+import * as selectors from "../../selectors/athletics";
 import PerformanceCard from "../PerformanceCard/PerformanceCard";
 
 const ResultsBoard = () => {
-    const performances = useSelector(rankingsSelectors.getPerformances);
+    const performances = useSelector(selectors.getPerformances);
     return (
-        <div className="results-board">
+        <div className="results-board board">
             {performances.map((performance) => {
                 // @ts-ignore
                 return <PerformanceCard performance={performance} />;
