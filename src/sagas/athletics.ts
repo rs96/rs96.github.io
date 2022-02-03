@@ -1,50 +1,13 @@
 import { SagaIterator } from "redux-saga";
-import { put, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import * as actions from "../actions/athletics";
 import Types from "../actions/initialData";
-import { Performance, Ranking } from "../types";
-
-const testPerformances: Performance[] = [
-    {
-        value: 54.32,
-        event: "Hammer",
-        location: "South Shields",
-        position: 1,
-        date: 1643613832,
-    },
-    {
-        value: 6.13,
-        event: "Long Jump",
-        location: "Gateshead",
-        position: 1,
-        date: 1632810732,
-    },
-    {
-        value: 11.32,
-        event: "100m",
-        location: "York",
-        position: 2,
-        date: 1623821032,
-    },
-];
-const testRankings: Ranking[] = [
-    {
-        rank: 5,
-        event: "Hammer",
-    },
-    {
-        rank: 2,
-        event: "Long Jump",
-    },
-    {
-        rank: 6,
-        event: "100m",
-    },
-];
+import scrapers from "../scrapers";
 
 export function* handleFetchInitialData(): SagaIterator {
-    yield put(actions.setPerformances(testPerformances));
-    yield put(actions.setRankings(testRankings));
+    const { performances, rankings } = yield call(scrapers.fetchPO10Data);
+    yield put(actions.setPerformances(performances));
+    yield put(actions.setRankings(rankings));
 }
 
 export function* fetchInitialData() {
