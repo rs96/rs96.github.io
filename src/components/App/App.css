@@ -1,31 +1,44 @@
-.root {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 100vw;
-    width: 100vh;
+html,
+#root,
+.app {
+    height: 100%;
 }
 
 .app {
     text-align: center;
     display: flex;
     flex-direction: column;
+    background-color: black;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
 }
 
 .info-boards {
     display: flex;
     margin: auto;
     width: 90%;
-    justify-content: center;
+    justify-content: stretch;
     align-items: stretch;
     background-color: grey;
 }
 
 .board {
     display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+}
+
+.board-contents {
+    display: flex;
     align-items: stretch;
     flex-wrap: wrap;
     flex-grow: 1;
+}
+
+.board-heading {
+    font: bold;
+    font-size: 2em;
 }
 
 .card {
@@ -36,12 +49,18 @@
     background-color: lightgrey;
     margin: 5px;
     padding: 5px;
+    max-width: 150px;
+    transition: all 0.2s ease-in-out;
 }
 
-.performance {
-    font-size: 5vw;
+.card:hover {
+    transform: scale(1.1);
+}
+.card-highlight {
+    font-size: 1.8em;
 }
 
-.heading {
-    font: bold;
+.small-text {
+    font-size: 0.8em;
+    color: grey;
 }
