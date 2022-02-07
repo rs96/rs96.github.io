@@ -1,87 +1,87 @@
 {
-    "meta": {
-        "Club": "City of York AC",
-        "AgeGroup": "Senior"
+  "meta": {
+    "Club": "City of York AC",
+    "AgeGroup": "Senior"
+  },
+  "performances": [
+    {
+      "value": 78.35,
+      "event": "600m(i)",
+      "location": "Sheffield (EIS)",
+      "position": 3,
+      "date": 1644022800
     },
-    "performances": [
-        {
-            "value": 78.35,
-            "event": "600m(i)",
-            "location": "Sheffield (EIS)",
-            "position": 3,
-            "date": 1644022800
-        },
-        {
-            "value": 48.7,
-            "event": "400m(i)",
-            "location": "Sheffield (EIS)",
-            "position": 4,
-            "date": 1642208400
-        },
-        {
-            "value": 48.81,
-            "event": "400m(i)",
-            "location": "Sheffield (EIS)",
-            "position": 2,
-            "date": 1642208400
-        },
-        {
-            "value": 49.54,
-            "event": "400m(i)",
-            "location": "Sheffield (EIS)",
-            "position": 1,
-            "date": 1642208400
-        },
-        {
-            "value": 79.65,
-            "event": "600m(i)",
-            "location": "Sportcity",
-            "position": 3,
-            "date": 1644022800
-        },
-        {
-            "value": 7.28,
-            "event": "60m(i)",
-            "location": "Sheffield (EIS)",
-            "position": 1,
-            "date": 1640739600
-        },
-        {
-            "value": 22.38,
-            "event": "200m(i)",
-            "location": "Sheffield (EIS)",
-            "position": 2,
-            "date": 1640739600
-        }
-    ],
-    "rankings": [
-        {
-            "rank": {
-                "uk": 50,
-                "european": 541
-            },
-            "event": "200m(i)"
-        },
-        {
-            "rank": {
-                "uk": 16,
-                "european": 168
-            },
-            "event": "400m(i)"
-        },
-        {
-            "rank": {
-                "uk": 5,
-                "european": 12,
-                "world": 37
-            },
-            "event": "600m(i)"
-        },
-        {
-            "rank": {
-                "uk": 160
-            },
-            "event": "60m(i)"
-        }
-    ]
+    {
+      "value": 48.7,
+      "event": "400m(i)",
+      "location": "Sheffield (EIS)",
+      "position": 4,
+      "date": 1642208400
+    },
+    {
+      "value": 48.81,
+      "event": "400m(i)",
+      "location": "Sheffield (EIS)",
+      "position": 2,
+      "date": 1642208400
+    },
+    {
+      "value": 49.54,
+      "event": "400m(i)",
+      "location": "Sheffield (EIS)",
+      "position": 1,
+      "date": 1642208400
+    },
+    {
+      "value": 79.65,
+      "event": "600m(i)",
+      "location": "Sportcity",
+      "position": 3,
+      "date": 1644022800
+    },
+    {
+      "value": 7.28,
+      "event": "60m(i)",
+      "location": "Sheffield (EIS)",
+      "position": 1,
+      "date": 1640739600
+    },
+    {
+      "value": 22.38,
+      "event": "200m(i)",
+      "location": "Sheffield (EIS)",
+      "position": 2,
+      "date": 1640739600
+    }
+  ],
+  "rankings": [
+    {
+      "rank": {
+        "uk": 50,
+        "european": 541
+      },
+      "event": "200m(i)"
+    },
+    {
+      "rank": {
+        "uk": 16,
+        "european": 168
+      },
+      "event": "400m(i)"
+    },
+    {
+      "rank": {
+        "uk": 5,
+        "european": 12,
+        "world": 37
+      },
+      "event": "600m(i)"
+    },
+    {
+      "rank": {
+        "uk": 160
+      },
+      "event": "60m(i)"
+    }
+  ]
 }

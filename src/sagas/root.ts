@@ -4,5 +4,5 @@ import athletics from "./athletics";
 const getSagas = () => [...athletics];
 
 export default function* rootSaga() {
-    yield all(getSagas().map(spawn));
+  yield all(getSagas().map(spawn));
 }

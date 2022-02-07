@@ -1,5 +1,5 @@
 interface IProps {
-    text: string;
+  text: string;
 }
 
 const Heading = ({ text }: IProps) => <div className="heading">{text}</div>;

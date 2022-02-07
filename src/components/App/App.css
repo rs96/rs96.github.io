@@ -1,78 +1,78 @@
 .app {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-    align-items: flex-start;
-    height: 100%;
-    width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
 }
 
 .info-boards {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 90%;
-    justify-content: stretch;
-    align-items: stretch;
-    background-color: grey;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+  justify-content: stretch;
+  align-items: stretch;
+  background-color: grey;
 }
 
 .board {
-    display: flex;
-    justify-content: stretch;
-    flex-direction: column;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
 }
 
 .board-contents {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    align-items: flex-start;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .board-heading {
-    font: bold;
-    font-size: 1.5em;
+  font: bold;
+  font-size: 1.5em;
 }
 
 .board-sub-heading {
-    font: bold;
-    font-size: 1.25em;
+  font: bold;
+  font-size: 1.25em;
 }
 
 .heading {
-    font: bold;
-    font-size: 2em;
-    background-color: lightgrey;
+  font: bold;
+  font-size: 2em;
+  background-color: lightgrey;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: lightgrey;
-    margin: 5px;
-    padding: 5px;
-    width: 100px;
-    transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: lightgrey;
+  margin: 5px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.1s ease-in-out;
 }
 
 .card:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .card-highlight {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 
 .small-text {
-    font-size: 0.8em;
-    color: grey;
+  font-size: 0.8em;
+  color: grey;
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
+  color: inherit;
+  text-decoration: inherit;
 }

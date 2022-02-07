@@ -8,12 +8,12 @@ import { configureStore } from "./store";
 const store = configureStore();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    </Provider>,
-    document.getElementById("root")
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
 );
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

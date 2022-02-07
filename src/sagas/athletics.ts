@@ -5,13 +5,13 @@ import Types from "../actions/initialData";
 import scrapers from "../scrapers";
 
 export function* handleFetchInitialData(): SagaIterator {
-    const { performances, rankings } = yield call(scrapers.fetchPO10Data);
-    yield put(actions.setPerformances(performances));
-    yield put(actions.setRankings(rankings));
+  const { performances, rankings } = yield call(scrapers.fetchPO10Data);
+  yield put(actions.setPerformances(performances));
+  yield put(actions.setRankings(rankings));
 }
 
 export function* fetchInitialData() {
-    yield takeEvery(Types.FETCH_INITIAL_DATA, handleFetchInitialData);
+  yield takeEvery(Types.FETCH_INITIAL_DATA, handleFetchInitialData);
 }
 
 export default [fetchInitialData];
