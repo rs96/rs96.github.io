@@ -56,19 +56,31 @@
     ],
     "rankings": [
         {
-            "rank": 50,
+            "rank": {
+                "uk": 50,
+                "european": 541
+            },
             "event": "200m(i)"
         },
         {
-            "rank": 16,
+            "rank": {
+                "uk": 16,
+                "european": 168
+            },
             "event": "400m(i)"
         },
         {
-            "rank": 5,
+            "rank": {
+                "uk": 5,
+                "european": 12,
+                "world": 37
+            },
             "event": "600m(i)"
         },
         {
-            "rank": 160,
+            "rank": {
+                "uk": 160
+            },
             "event": "60m(i)"
         }
     ]

@@ -9,7 +9,11 @@ export interface Performance {
 
 export interface Ranking {
     event: string;
-    rank: number;
+    rank: {
+        uk: number;
+        european?: number;
+        world?: number;
+    };
 }
 
 // export type MeasuredEvent = "Hammer" | "High Jump" | "Long Jump" | "";

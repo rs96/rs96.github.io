@@ -1,13 +1,12 @@
 import { useSelector } from "react-redux";
 import * as selectors from "../../selectors/athletics";
-import RankingCard from "../RankingCard/RankingCard";
+import RankingCard from "./RankingCard";
 
 const RankingsBoard = () => {
     const rankings = useSelector(selectors.getRankings);
     return (
         <div className="rankings-board board">
             <div className="board-heading">Season Rankings</div>
-            <div className="board-sub-heading">UK</div>
             <div className="board-contents">
                 {rankings.map((ranking, index) => (
                     <div key={index}>

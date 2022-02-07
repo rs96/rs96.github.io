@@ -15,13 +15,10 @@ const App = () => {
     return (
         <div className="app">
             <Header text="rs96.github.io" />
-            <div>Just some info on me and my athletics.</div>
-            <div className="info-boards">
-                <LinkBoard />
-            </div>
             <div className="info-boards">
                 <RankingsBoard />
                 <PerformancesBoard />
+                <LinkBoard />
             </div>
         </div>
     );
