@@ -20,6 +20,7 @@ export const monthMap: { [key: number]: string } = {
 };
 
 export const timedEvents = [
+    "60m(i)",
     "100m",
     "200m(i)",
     "200m",

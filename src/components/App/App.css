@@ -1,9 +1,3 @@
-html,
-#root,
-.app {
-    height: 100%;
-}
-
 .app {
     text-align: center;
     display: flex;
@@ -16,6 +10,7 @@ html,
 
 .info-boards {
     display: flex;
+    flex-direction: column;
     margin: auto;
     width: 90%;
     justify-content: stretch;
@@ -33,17 +28,24 @@ html,
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.board-heading {
+    font: bold;
+    font-size: 1.75em;
+}
+
+.board-sub-heading {
+    font: bold;
+    font-size: 1.25em;
 }
 
 .heading {
     font: bold;
     font-size: 2em;
     background-color: lightgrey;
-}
-
-.board-heading {
-    font: bold;
-    font-size: 2em;
 }
 
 .card {
@@ -54,7 +56,7 @@ html,
     background-color: lightgrey;
     margin: 5px;
     padding: 5px;
-    max-width: 150px;
+    width: 100px;
     transition: all 0.1s ease-in-out;
 }
 

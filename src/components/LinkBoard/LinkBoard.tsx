@@ -3,7 +3,7 @@ import LinkCard from "./LinkCard";
 const LinkBoard = () => {
     return (
         <div className="link-board board">
-            <div className="board-heading">External Links </div>
+            <div className="board-sub-heading">External Links </div>
             <div className="board-contents">
                 <LinkCard
                     name="Power of 10"

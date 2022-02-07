@@ -20,8 +20,8 @@ const App = () => {
                 <LinkBoard />
             </div>
             <div className="info-boards">
-                <PerformancesBoard />
                 <RankingsBoard />
+                <PerformancesBoard />
             </div>
         </div>
     );
