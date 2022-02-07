@@ -7,6 +7,7 @@ const RankingsBoard = () => {
     return (
         <div className="rankings-board board">
             <div className="board-heading">Season Rankings</div>
+            <div className="board-heading">UK</div>
             <div className="board-contents">
                 {rankings.map((ranking, index) => (
                     <div key={index}>

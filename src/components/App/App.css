@@ -9,7 +9,7 @@ html,
     display: flex;
     flex-direction: column;
     background-color: black;
-    align-items: stretch;
+    align-items: flex-start;
     height: 100%;
     width: 100%;
 }
@@ -31,9 +31,14 @@ html,
 
 .board-contents {
     display: flex;
-    align-items: stretch;
     flex-wrap: wrap;
     flex-grow: 1;
+}
+
+.heading {
+    font: bold;
+    font-size: 2em;
+    background-color: lightgrey;
 }
 
 .board-heading {
@@ -50,7 +55,7 @@ html,
     margin: 5px;
     padding: 5px;
     max-width: 150px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .card:hover {
@@ -63,4 +68,9 @@ html,
 .small-text {
     font-size: 0.8em;
     color: grey;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
 }

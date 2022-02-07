@@ -19,4 +19,14 @@ export const monthMap: { [key: number]: string } = {
     12: "Dec",
 };
 
-export const timedEvents = ["100m", "200m", "400m", "800m"];
+export const timedEvents = [
+    "100m",
+    "200m(i)",
+    "200m",
+    "400m(i)",
+    "400m",
+    "600m(i)",
+    "600m",
+    "800m",
+    "800m(i)",
+];
