@@ -12,7 +12,7 @@ const PerformanceCard = ({ performance }: IProps) => {
       <div className="event ">{event}</div>
       <div className="performance card-highlight">{formatPerformance(value, event)}</div>
       <div className="position small-text">{ordinalFormat(position)}</div>
-      <div className="location">{location}</div>
+      <div className="location small-text">{location}</div>
       <div className="date small-text">{formatDate(date)}</div>
     </div>
   );

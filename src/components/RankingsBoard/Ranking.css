@@ -1,0 +1,10 @@
+.ranking-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ranking {
+  margin: 0 2px;
+}

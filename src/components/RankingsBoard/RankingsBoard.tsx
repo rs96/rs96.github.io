@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import * as selectors from '../../selectors/athletics';
 import RankingCard from './RankingCard';
+import './Ranking.css';
 
 const RankingsBoard = () => {
   const rankings = useSelector(selectors.getRankings);
