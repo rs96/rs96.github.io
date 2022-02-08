@@ -1,5 +1,5 @@
-import Types from "../actions/athletics";
-import { IAthleticsState, Ranking, Performance } from "../types";
+import Types from '../actions/athletics';
+import { IAthleticsState, Ranking, Performance } from '../types';
 
 const INITIAL_STATE: IAthleticsState = {
   performances: [],

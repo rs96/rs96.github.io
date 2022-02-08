@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import athletics from "./athletics";
+import { combineReducers } from 'redux';
+import athletics from './athletics';
 
 const root = combineReducers({ athletics });
 

@@ -1,5 +1,5 @@
-import { all, spawn } from "redux-saga/effects";
-import athletics from "./athletics";
+import { all, spawn } from 'redux-saga/effects';
+import athletics from './athletics';
 
 const getSagas = () => [...athletics];
 

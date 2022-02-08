@@ -1,8 +1,8 @@
-import { SagaIterator } from "redux-saga";
-import { call, put, takeEvery } from "redux-saga/effects";
-import * as actions from "../actions/athletics";
-import Types from "../actions/initialData";
-import scrapers from "../scrapers";
+import { SagaIterator } from 'redux-saga';
+import { call, put, takeEvery } from 'redux-saga/effects';
+import * as actions from '../actions/athletics';
+import Types from '../actions/initialData';
+import scrapers from '../scrapers';
 
 export function* handleFetchInitialData(): SagaIterator {
   const { performances, rankings } = yield call(scrapers.fetchPO10Data);
