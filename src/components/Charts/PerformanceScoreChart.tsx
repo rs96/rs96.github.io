@@ -62,6 +62,8 @@ const PerformanceScoreChart = () => {
     const plotMargins = { x: 40, y: 25 };
     const dateMax = d3.max(data, (d) => d.date) as number;
     const dateMin = d3.min(data, (d) => d.date) as number;
+    const scoreMax = d3.max(data, (d) => d.score) as number;
+    const scoreMin = d3.min(data, (d) => d.score) as number;
 
     // define our scaling functions
     const xScale = d3
@@ -72,7 +74,7 @@ const PerformanceScoreChart = () => {
     const yScale = d3
       .scaleLinear()
       // @ts-ignore
-      .domain([d3.min(data, (d) => d.score), d3.max(data, (d) => d.score)])
+      .domain([scoreMin, scoreMax])
       .range([height - plotMargins.y, plotMargins.y]);
 
     const graph = d3.select('svg').attr('width', width).attr('height', height);
@@ -81,7 +83,7 @@ const PerformanceScoreChart = () => {
       .axisBottom(xScale)
       .ticks((dateMax - dateMin) / msInYear)
       .tickFormat((d, i) => (i % 2 ? getYearFromDate(d as number) : ''));
-    const yAxis = d3.axisLeft(yScale);
+    const yAxis = d3.axisLeft(yScale).ticks(5);
 
     plot
       .append('circle')
