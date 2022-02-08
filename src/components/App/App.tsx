@@ -19,8 +19,9 @@ const App = () => {
       <div className="info-boards">
         <RankingsBoard />
         <PerformancesBoard />
-        <LinkBoard />
+        <div className="board-heading">Charts</div>
         <PerformanceScoreChart />
+        <LinkBoard />
       </div>
     </div>
   );
