@@ -10,4 +10,4 @@ export const formatDate = (date: number) => {
 };
 
 export const formatPerformance = (performance: number, event: string) =>
-  constants.timedEvents.includes(event) ? `${performance}s` : `${performance}m`;
+  constants.timedEvents.includes(event) ? `${performance.toFixed(2)}s` : `${performance.toFixed(2)}m`;
