@@ -31,3 +31,5 @@ export const timedEvents = [
   '800m',
   '800m(i)',
 ];
+
+export const msInYear = 3.154e7;

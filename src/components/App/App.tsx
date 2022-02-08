@@ -6,12 +6,13 @@ import LinkBoard from '../LinkBoard/LinkBoard';
 import RankingsBoard from '../RankingsBoard/RankingsBoard';
 import { fetchInitialData } from '../../actions/initialData';
 import { useDispatch } from 'react-redux';
+import PerformanceScoreChart from '../Charts/PerformanceScoreChart';
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchInitialData());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="app">
       <Header text="rs96.github.io" />
@@ -19,6 +20,7 @@ const App = () => {
         <RankingsBoard />
         <PerformancesBoard />
         <LinkBoard />
+        <PerformanceScoreChart />
       </div>
     </div>
   );
