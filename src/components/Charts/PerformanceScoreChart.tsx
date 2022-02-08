@@ -54,9 +54,12 @@ const PerformanceScoreChart = () => {
   ];
 
   const buildGraph = (data: PerformanceScorePoint[]) => {
+    // to later become props
+    const chartTitle = 'Event Performance Scores';
+
     // @ts-ignore
     const { width, height } = d3.select('#plot').node().getBoundingClientRect();
-    const plotMargins = { x: 20, y: 25 };
+    const plotMargins = { x: 40, y: 25 };
     const dateMax = d3.max(data, (d) => d.date) as number;
     const dateMin = d3.min(data, (d) => d.date) as number;
 
@@ -80,8 +83,6 @@ const PerformanceScoreChart = () => {
       .tickFormat((d, i) => (i % 2 ? getYearFromDate(d as number) : ''));
     const yAxis = d3.axisLeft(yScale);
 
-    console.log({ ticks: (dateMax - dateMin) / msInYear });
-
     plot
       .append('circle')
       .attr('r', 3)
@@ -99,21 +100,18 @@ const PerformanceScoreChart = () => {
     // add axes
     plot
       .append('g')
-      .attr('transform', `translate(${plotMargins.x}, ${height - plotMargins.y})`)
+      .attr('transform', `translate(0, ${height - plotMargins.y})`)
       .call(xAxis);
-    plot
-      .append('g')
-      .attr('transform', `translate(${2 * plotMargins.x},0)`)
-      .call(yAxis);
+    plot.append('g').attr('transform', `translate(${plotMargins.x},0)`).call(yAxis);
 
     // add title
     plot
       .append('text')
       .attr('class', 'title')
-      .attr('x', width)
+      .attr('x', width / 2 + chartTitle.length)
       .attr('y', plotMargins.y / 2)
       .attr('text-anchor', 'middle')
-      .text('Event Performance Scores');
+      .text(chartTitle);
   };
 
   return (
