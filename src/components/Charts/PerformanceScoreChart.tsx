@@ -55,7 +55,7 @@ const PerformanceScoreChart = () => {
 
   const buildGraph = (data: PerformanceScorePoint[]) => {
     // to later become props
-    const chartTitle = 'Event Performance Scores';
+    const chartTitle = '400m Performance Scores';
 
     // @ts-ignore
     const { width, height } = d3.select('#plot').node().getBoundingClientRect();
@@ -87,17 +87,10 @@ const PerformanceScoreChart = () => {
 
     plot
       .append('circle')
-      .attr('r', 3)
+      .attr('r', 2)
       .attr('cx', (d) => xScale(d.date))
       .attr('cy', (d) => yScale(d.score))
       .attr('fill', 'black');
-
-    plot
-      .append('text')
-      .attr('x', (d) => xScale(d.date))
-      .attr('y', (d) => yScale(d.score))
-      .attr('dy', 5)
-      .text((d) => d.event);
 
     // add axes
     plot
@@ -110,7 +103,7 @@ const PerformanceScoreChart = () => {
     plot
       .append('text')
       .attr('class', 'title')
-      .attr('x', width / 2 + chartTitle.length)
+      .attr('x', width - chartTitle.length)
       .attr('y', plotMargins.y / 2)
       .attr('text-anchor', 'middle')
       .text(chartTitle);

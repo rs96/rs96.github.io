@@ -1,11 +1,10 @@
-rect {
-  fill: orange;
+text {
+  font-family: 'DM Serif Display', serif;
+  text-anchor: end;
 }
 
-text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
+.title {
+  font-size: 1em;
 }
 
 .svg {

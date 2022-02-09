@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  align-items: flex-start;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -15,7 +15,7 @@
   width: 99%;
   justify-content: stretch;
   align-items: stretch;
-  background-color: grey;
+  background-color: whitesmoke;
 }
 
 .board {
@@ -35,6 +35,7 @@
 .board-heading {
   font: bold;
   font-size: 1.5em;
+  font-family: 'DM Serif Display', serif;
 }
 
 .board-sub-heading {
@@ -45,15 +46,16 @@
 .heading {
   font: bold;
   font-size: 2em;
-  background-color: lightgrey;
+  font-family: 'DM Serif Display', serif;
+  color: whitesmoke;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
-  border-radius: 5px;
-  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 1px;
+  background-color: whitesmoke;
   margin: 5px;
   padding: 4px;
   width: 26vw;
@@ -61,7 +63,7 @@
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .card-highlight {
   font-size: 1.8em;
