@@ -7,6 +7,7 @@ import './chart.css';
 interface PerformanceScorePoint {
   event: string;
   score: number;
+  performance: string;
   date: number;
 }
 
@@ -18,37 +19,44 @@ const PerformanceScoreChart = () => {
   const performanceScoreData: PerformanceScorePoint[] = [
     {
       event: '400m',
-      score: 943, //48.60
+      score: 943,
+      performance: '48.60',
       date: 1622073600,
     },
     {
       event: '400m',
-      score: 1001, //48.64i
+      score: 1001,
+      performance: '48.64i',
       date: 1580000400,
     },
     {
       event: '400m',
-      score: 1022, //47.35
+      score: 1022,
+      performance: '47.35',
       date: 1564272000,
     },
     {
       event: '400m',
-      score: 1003, //47.65
+      score: 1003,
+      performance: '47.65',
       date: 1534032000,
     },
     {
       event: '400m',
-      score: 1026, //47.29
+      score: 1026,
+      performance: '47.29',
       date: 1497744000,
     },
     {
       event: '400m',
-      score: 926, //48.87
+      score: 926,
+      performance: '48.87',
       date: 1466208000,
     },
     {
       event: '400m',
-      score: 829, //50.5
+      score: 829,
+      performance: '50.5',
       date: 1438992000,
     },
   ];
@@ -90,7 +98,38 @@ const PerformanceScoreChart = () => {
       .attr('r', 2)
       .attr('cx', (d) => xScale(d.date))
       .attr('cy', (d) => yScale(d.score))
-      .attr('fill', 'black');
+      .attr('fill', 'black')
+      .on('mouseover', (_, d) => {
+        plot.selectAll(`#tooltip${d.date}`).attr('visibility', 'visible');
+      })
+      .on('mouseout', (_, d) => {
+        plot.selectAll(`#tooltip${d.date}`).attr('visibility', 'hidden');
+      });
+
+    plot
+      .append('rect')
+      .attr('class', 'tooltip')
+      .attr('id', (d) => `tooltip${d.date}`)
+      .attr('x', (d) => xScale(d.date))
+      .attr('y', (d) => yScale(d.score))
+      .attr('width', 21)
+      .attr('height', 12)
+      .attr('transform', `translate(1, 1)`)
+      .attr('dy', 5)
+      .attr('fill', 'black')
+      .attr('visibility', 'hidden');
+
+    plot
+      .append('text')
+      .attr('class', 'tooltip')
+      .attr('id', (d) => `tooltip${d.date}`)
+      .attr('x', (d) => xScale(d.date))
+      .attr('y', (d) => yScale(d.score))
+      .attr('transform', `translate(21, 5)`)
+      .attr('dy', 5)
+      .attr('fill', 'whitesmoke')
+      .attr('visibility', 'hidden')
+      .text((d) => d.performance);
 
     // add axes
     plot
