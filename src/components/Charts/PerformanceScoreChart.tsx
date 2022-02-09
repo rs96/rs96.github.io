@@ -14,7 +14,7 @@ interface PerformanceScorePoint {
 const PerformanceScoreChart = () => {
   useEffect(() => {
     buildGraph(performanceScoreData);
-  }, []);
+  });
 
   const performanceScoreData: PerformanceScorePoint[] = [
     {
