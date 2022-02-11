@@ -1,87 +1,199 @@
 {
-  "meta": {
-    "Club": "City of York AC",
-    "AgeGroup": "Senior"
+  "athlete": {
+    "id": "78994",
+    "name": "Robert Shipley",
+    "club": "City of York",
+    "sex": "Male",
+    "age_group": "SEN",
+    "county": "Yorkshire",
+    "region": "Yorkshire",
+    "nation": "England"
   },
-  "performances": [
+  "venues": [
     {
-      "value": 78.35,
-      "event": "600m(i)",
-      "location": "Sheffield (EIS)",
-      "position": 3,
-      "date": 1644022800
+      "id": "1",
+      "name": "Sheffield",
+      "isIndoor": true,
+      "isOversized": false,
+      "isAtAltitude": false
     },
     {
-      "value": 48.7,
-      "event": "400m(i)",
-      "location": "Sheffield (EIS)",
-      "position": 4,
-      "date": 1642208400
+      "id": "2",
+      "name": "Sportcity",
+      "isIndoor": true,
+      "isOversized": false,
+      "isAtAltitude": false
     },
     {
-      "value": 48.81,
-      "event": "400m(i)",
-      "location": "Sheffield (EIS)",
-      "position": 2,
-      "date": 1642208400
+      "id": "3",
+      "name": "Middlesbrough",
+      "isIndoor": false,
+      "isOversized": false,
+      "isAtAltitude": false
     },
     {
-      "value": 49.54,
-      "event": "400m(i)",
-      "location": "Sheffield (EIS)",
-      "position": 1,
-      "date": 1642208400
+      "id": "4",
+      "name": "Sheffield",
+      "isIndoor": false,
+      "isOversized": false,
+      "isAtAltitude": false
     },
     {
-      "value": 79.65,
-      "event": "600m(i)",
-      "location": "Sportcity",
-      "position": 3,
-      "date": 1644022800
-    },
-    {
-      "value": 7.28,
-      "event": "60m(i)",
-      "location": "Sheffield (EIS)",
-      "position": 1,
-      "date": 1640739600
-    },
-    {
-      "value": 22.38,
-      "event": "200m(i)",
-      "location": "Sheffield (EIS)",
-      "position": 2,
-      "date": 1640739600
+      "id": "5",
+      "name": "York",
+      "isIndoor": false,
+      "isOversized": false,
+      "isAtAltitude": false
     }
   ],
-  "rankings": [
+  "events": [
+    { "id": "1", "name": "400" },
+    { "id": "2", "name": "600" },
+    { "id": "3", "name": "60" },
+    { "id": "4", "name": "200" }
+  ],
+  "meetings": [
     {
-      "rank": {
-        "uk": 50,
-        "european": 541
-      },
-      "event": "200m(i)"
+      "id": "437376",
+      "name": "Northern Athletics Indoor Senior/U20/U17 T&F Championships 2022"
+    },
+    { "id": "442273", "name": "Run Jump Throw Series, inc. Masters Grand Prix" },
+    { "id": "428898", "name": "Manchester Indoor Open Meetings" },
+    { "id": "439673", "name": "Run Jump Throw Series" },
+    { "id": "413349", "name": "North East Counties AA  Open Meeting" },
+    { "id": "415224", "name": "North of England League East Premier" },
+    { "id": "415222", "name": "North of England League East Premier" }
+  ],
+  "peformances": [
+    {
+      "athleteId": "78994",
+      "eventId": "1",
+      "performance": 48.7,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 4,
+      "heat": "",
+      "venueId": "1",
+      "meeting": "Northern Athletics Indoor Senior/U20/U17 T&F Championships 2022",
+      "date": 1642204800002,
+      "meetingId": "437376"
     },
     {
-      "rank": {
-        "uk": 16,
-        "european": 168
-      },
-      "event": "400m(i)"
+      "athleteId": "78994",
+      "eventId": "1",
+      "performance": 48.81,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 2,
+      "heat": "s1",
+      "venueId": "1",
+      "meeting": "Northern Athletics Indoor Senior/U20/U17 T&F Championships 2022",
+      "date": 1642204800003,
+      "meetingId": "437376"
     },
     {
-      "rank": {
-        "uk": 5,
-        "european": 12,
-        "world": 37
-      },
-      "event": "600m(i)"
+      "athleteId": "78994",
+      "eventId": "1",
+      "performance": 49.54,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 1,
+      "heat": "h4",
+      "venueId": "1",
+      "meeting": "Northern Athletics Indoor Senior/U20/U17 T&F Championships 2022",
+      "date": 1642204800004,
+      "meetingId": "437376"
     },
     {
-      "rank": {
-        "uk": 160
-      },
-      "event": "60m(i)"
+      "athleteId": "78994",
+      "eventId": "2",
+      "performance": 78.34,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 3,
+      "heat": "",
+      "venueId": "1",
+      "meeting": "Run Jump Throw Series, inc. Masters Grand Prix",
+      "date": 1644019200005,
+      "meetingId": "442273"
+    },
+    {
+      "athleteId": "78994",
+      "eventId": "2",
+      "performance": 79.65,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 3,
+      "heat": "1",
+      "venueId": "2",
+      "meeting": "Manchester Indoor Open Meetings",
+      "date": 1641686400006,
+      "meetingId": "428898"
+    },
+    {
+      "athleteId": "78994",
+      "eventId": "3",
+      "performance": 7.28,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 1,
+      "heat": "1.2",
+      "venueId": "1",
+      "meeting": "Run Jump Throw Series",
+      "date": 1640736000009,
+      "meetingId": "439673"
+    },
+    {
+      "athleteId": "78994",
+      "eventId": "4",
+      "performance": 22.06,
+      "tags": ["w"],
+      "wind": 2.9,
+      "position": 2,
+      "heat": "13",
+      "venueId": "3",
+      "meeting": "North East Counties AA  Open Meeting",
+      "date": 1620514800010,
+      "meetingId": "413349"
+    },
+    {
+      "athleteId": "78994",
+      "eventId": "4",
+      "performance": 22.18,
+      "tags": [],
+      "wind": 0,
+      "position": 2,
+      "heat": "A",
+      "venueId": "4",
+      "meeting": "North of England League East Premier",
+      "date": 1627772400011,
+      "meetingId": "415224"
+    },
+    {
+      "athleteId": "78994",
+      "eventId": "4",
+      "performance": 22.38,
+      "tags": ["i"],
+      "wind": 0,
+      "position": 2,
+      "heat": "2",
+      "venueId": "1",
+      "meeting": "Run Jump Throw Series",
+      "date": 1640736000012,
+      "meetingId": "439673"
+    },
+    {
+      "athleteId": "78994",
+      "eventId": "4",
+      "performance": 22.45,
+      "tags": [],
+      "wind": 0,
+      "position": 2,
+      "heat": "A",
+      "venueId": "5",
+      "meeting": "North of England League East Premier",
+      "date": 1624057200013,
+      "meetingId": "415222"
     }
   ]
 }

@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { AthleteData } from '../types';
 
 export const localAthletePage = 'http://localhost:5000/athlete/';
 
-export const fetchAthleteData = async (id: number) => {
+export const fetchAthleteData = async (id: number): Promise<AthleteData> => {
   try {
     const res = await axios({
       url: `${localAthletePage}${id}`,
@@ -12,6 +13,6 @@ export const fetchAthleteData = async (id: number) => {
     });
     return res.data;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
