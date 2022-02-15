@@ -15,11 +15,11 @@ export function* handleFetchInitialData(): SagaIterator {
   } else {
     athleteData = sampleData;
   }
+  yield put(actions.setAthlete(athleteData.athlete));
+  yield put(actions.setPerformances(athleteData.performances));
   yield put(actions.setMeetings(athleteData.meetings));
   yield put(actions.setEvents(athleteData.events));
   yield put(actions.setVenues(athleteData.venues));
-  yield put(actions.setAthlete(athleteData.athlete));
-  yield put(actions.setPerformances(athleteData.performances));
   yield put(actions.setRankings(rankings));
 }
 

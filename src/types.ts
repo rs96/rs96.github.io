@@ -40,6 +40,7 @@ export interface Athlete {
 export interface Performance {
   id: string;
   athleteId: string;
+  eventId: string;
   performance: number;
   tags: string[];
   wind: number;
@@ -55,7 +56,7 @@ export interface AthleteData {
   venues: Venue[];
   events: Event[];
   meetings: Meeting[];
-  peformances: Performance[];
+  performances: Performance[];
 }
 
 // app state types
