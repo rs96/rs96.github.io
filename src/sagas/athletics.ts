@@ -5,6 +5,7 @@ import Types from '../actions/initialData';
 import { fetchAthleteData } from '../api/athlete';
 import rankings from '../sample-data/rshipley/rankings.json';
 import sampleData from '../sample-data/rshipley/thepowerof10.json';
+import { sortByDate } from '../utils';
 
 const isUsingServer = false;
 
@@ -16,7 +17,7 @@ export function* handleFetchInitialData(): SagaIterator {
     athleteData = sampleData;
   }
   yield put(actions.setAthlete(athleteData.athlete));
-  yield put(actions.setPerformances(athleteData.performances));
+  yield put(actions.setPerformances(athleteData.performances.sort(sortByDate)));
   yield put(actions.setMeetings(athleteData.meetings));
   yield put(actions.setEvents(athleteData.events));
   yield put(actions.setVenues(athleteData.venues));

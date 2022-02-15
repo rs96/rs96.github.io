@@ -9,7 +9,7 @@ const PerformancesBoard = () => {
     <div className="results-board board">
       <div className="board-heading">Recent Performances</div>
       <div className="board-contents">
-        {performances.map((performance, index) => (
+        {performances.slice(0, 9).map((performance, index) => (
           <div key={index}>
             <PerformanceCard performance={performance} />
           </div>
