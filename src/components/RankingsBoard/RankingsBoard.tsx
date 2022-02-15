@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import * as selectors from '../../selectors/athletics';
+import * as selectors from '../../selectors/rankings';
 import RankingCard from './RankingCard';
 import './Ranking.css';
 
