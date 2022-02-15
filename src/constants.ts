@@ -19,17 +19,6 @@ export const monthMap: { [key: number]: string } = {
   12: 'Dec',
 };
 
-export const timedEvents = [
-  '60m(i)',
-  '100m',
-  '200m(i)',
-  '200m',
-  '400m(i)',
-  '400m',
-  '600m(i)',
-  '600m',
-  '800m',
-  '800m(i)',
-];
+export const timedEvents = ['60', '100', '200(i)', '200', '400(i)', '400', '600(i)', '600', '800', '800(i)'];
 
 export const msInYear = 3.154e7;

@@ -11,5 +11,5 @@ export const formatDate = (date: number) => {
 
 export const getYearFromDate = (date: number) => new Date(date * 1000).getFullYear().toString();
 
-export const formatPerformance = (performance: number, event: string) =>
-  constants.timedEvents.includes(event) ? `${performance.toFixed(2)}s` : `${performance.toFixed(2)}m`;
+export const formatPerformance = (performance: number, event: string, tags?: string[]) =>
+  `${performance.toFixed(2)}${tags?.join()}${constants.timedEvents.includes(event) ? `s` : `m`}`;
