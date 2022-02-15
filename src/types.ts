@@ -38,7 +38,6 @@ export interface Athlete {
 }
 
 export interface Performance {
-  id: string;
   athleteId: string;
   eventId: string;
   performance: number;

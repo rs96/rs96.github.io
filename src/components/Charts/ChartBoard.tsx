@@ -1,4 +1,4 @@
-import PerformanceScoreChart from './PerformanceScoreChart';
+import EventPerformanceChart from './EventPerformanceChart';
 import './chart.css';
 
 const ChartBoard = () => {
@@ -6,7 +6,7 @@ const ChartBoard = () => {
     <div className="rankings-board board">
       <div className="board-heading">Charts</div>
       <div className="board-contents">
-        <PerformanceScoreChart />
+        <EventPerformanceChart />
       </div>
     </div>
   );

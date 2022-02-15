@@ -10,7 +10,7 @@ export const formatDate = (date: number) => {
   } ${dateObject.getFullYear()}`;
 };
 
-export const getYearFromDate = (date: number) => new Date(date * 1000).getFullYear().toString();
+export const getYearFromDate = (date: number) => new Date(date).getFullYear().toString();
 
 export const formatPerformance = (performance: number, event: string, tags?: string[]) =>
   `${performance.toFixed(2)}${tags?.join()}${constants.timedEvents.includes(event) ? `s` : `m`}`;

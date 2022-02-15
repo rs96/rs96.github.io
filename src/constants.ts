@@ -21,4 +21,4 @@ export const monthMap: { [key: number]: string } = {
 
 export const timedEvents = ['60', '100', '200(i)', '200', '400(i)', '400', '600(i)', '600', '800', '800(i)'];
 
-export const msInYear = 3.154e7;
+export const msInYear = 3.154e10;
