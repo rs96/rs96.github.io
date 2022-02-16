@@ -17,6 +17,7 @@ text {
   display: flex;
   flex-direction: column;
 }
+
 .svg {
   height: 90%;
   width: 100%;
@@ -25,6 +26,7 @@ text {
   height: 95%;
   width: 95%;
 }
+
 .chartControls {
   height: 10%;
   width: 100%;

@@ -64,7 +64,7 @@ const EventPerformanceChart = ({ event }: Props) => {
     const yAxis = d3
       .axisLeft(yScale)
       .ticks(5)
-      .tickFormat((d, i) => (i % 2 ? '' : (d as number).toFixed(0).toString()));
+      .tickFormat((d, i) => (i % 2 ? (d as number).toFixed(0).toString() : ''));
 
     plot
       .append('circle')

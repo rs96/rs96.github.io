@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Heading from '../Heading/Heading';
-import './App.css';
+import './app.css';
 import PerformancesBoard from '../PerformancesBoard/PerformancesBoard';
 import LinkBoard from '../LinkBoard/LinkBoard';
 import RankingsBoard from '../RankingsBoard/RankingsBoard';
