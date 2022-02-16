@@ -33,7 +33,7 @@ const EventPerformanceChart = () => {
     const chartTitle = '400m Performance';
 
     // @ts-ignore
-    const { width, height } = d3.select('#plot').node().getBoundingClientRect();
+    const { width, height } = d3.select('svg').node().getBoundingClientRect();
     const dateMax = d3.max(data, (d) => d.date) as number;
     const dateMin = d3.min(data, (d) => d.date) as number;
     const performanceMax = d3.max(data, (d) => d.performance) as number;
