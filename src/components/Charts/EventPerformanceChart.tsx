@@ -61,7 +61,7 @@ const EventPerformanceChart = () => {
     const xAxis = d3
       .axisBottom(xScale)
       .ticks((dateMax - dateMin) / msInYear)
-      .tickFormat((d, i) => (i % 2 ? '' : getYearFromDate(d as number)));
+      .tickFormat((d, i) => (i % 2 ? getYearFromDate(d as number) : ''));
     const yAxis = d3
       .axisLeft(yScale)
       .ticks(5)
@@ -139,6 +139,7 @@ const EventPerformanceChart = () => {
           Decrease
         </div>
       </div>
+      <div className="small-text">Chart resizing currently broken on mobile :(</div>
       <div className="svg">
         <svg id="plot" className="container"></svg>
       </div>
