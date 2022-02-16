@@ -54,8 +54,9 @@ const EventPerformanceChart = () => {
       .domain([performanceMin, performanceMax])
       .range([height - plotMargins.y, plotMargins.y]);
 
-    const graph = d3.select('svg').attr('width', width).attr('height', height);
+    const graph = d3.select('svg');
     graph.selectAll('*').remove();
+    graph.attr('width', width).attr('height', height);
     const plot = graph.selectAll('g').data(data).enter();
     const xAxis = d3
       .axisBottom(xScale)
