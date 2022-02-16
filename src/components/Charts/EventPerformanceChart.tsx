@@ -39,7 +39,6 @@ const EventPerformanceChart = () => {
     const performanceMax = d3.max(data, (d) => d.performance) as number;
     const performanceMin = d3.min(data, (d) => d.performance) as number;
     if (limit === bigMaxPerformance) {
-      console.log({ performanceMax });
       setLimit(performanceMax);
     }
 
