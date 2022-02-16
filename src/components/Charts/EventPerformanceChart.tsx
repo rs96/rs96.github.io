@@ -1,30 +1,47 @@
 import * as d3 from 'd3';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getPerformancesOfEventId } from '../../selectors/performances';
 import { msInYear } from '../../constants';
-import { getYearFromDate } from '../../utils';
+import { formatPerformance, getYearFromDate } from '../../utils';
 import { Performance } from '../../types';
 import './chart.css';
 
 const EventPerformanceChart = () => {
+  const bigMaxPerformance = 999999;
+  const plotMargins = { x: 20, y: 25 };
   const performances = useSelector(getPerformancesOfEventId('1'));
+  const [limit, setLimit] = useState(bigMaxPerformance);
+  const filteredPerformances = performances.filter((performance) => performance.performance <= limit);
   useEffect(() => {
-    // console.log({ a: getYearFromDate(performances[0].date) });
-    buildGraph(performances);
-  });
+    if (filteredPerformances.length) {
+      drawGraph(filteredPerformances);
+    }
+  }, [filteredPerformances]);
 
-  const buildGraph = (data: Performance[]) => {
+  //chart controls
+  const handlePerformanceLimitIncrease = () => {
+    setLimit(limit + 0.1);
+  };
+
+  const handlePerformanceLimitDecrease = () => {
+    setLimit(limit - 0.1);
+  };
+
+  const drawGraph = (data: Performance[]) => {
     // to later become props
     const chartTitle = '400m Performance';
 
     // @ts-ignore
     const { width, height } = d3.select('#plot').node().getBoundingClientRect();
-    const plotMargins = { x: 20, y: 25 };
     const dateMax = d3.max(data, (d) => d.date) as number;
     const dateMin = d3.min(data, (d) => d.date) as number;
-    const scoreMax = d3.max(data, (d) => d.performance) as number;
-    const scoreMin = d3.min(data, (d) => d.performance) as number;
+    const performanceMax = d3.max(data, (d) => d.performance) as number;
+    const performanceMin = d3.min(data, (d) => d.performance) as number;
+    if (limit === bigMaxPerformance) {
+      console.log({ performanceMax });
+      setLimit(performanceMax);
+    }
 
     // define our scaling functions
     const xScale = d3
@@ -35,11 +52,12 @@ const EventPerformanceChart = () => {
     const yScale = d3
       .scaleLinear()
       // @ts-ignore
-      .domain([scoreMin, scoreMax])
+      .domain([performanceMin, performanceMax])
       .range([height - plotMargins.y, plotMargins.y]);
 
     const graph = d3.select('svg').attr('width', width).attr('height', height);
-    const plot = graph.selectAll('g').data(data).enter().append('g');
+    graph.selectAll('*').remove();
+    const plot = graph.selectAll('g').data(data).enter();
     const xAxis = d3
       .axisBottom(xScale)
       .ticks((dateMax - dateMin) / msInYear)
@@ -48,41 +66,41 @@ const EventPerformanceChart = () => {
 
     plot
       .append('circle')
-      .attr('r', 1)
+      .attr('r', 3)
       .attr('cx', (d) => xScale(d.date))
       .attr('cy', (d) => yScale(d.performance))
-      .attr('fill', 'black');
-    // .on('mouseover', (_, d) => {
-    //   plot.selectAll(`#tooltip${d.date}`).attr('visibility', 'visible');
-    // })
-    // .on('mouseout', (_, d) => {
-    //   plot.selectAll(`#tooltip${d.date}`).attr('visibility', 'hidden');
-    // });
+      .attr('fill', 'black')
+      .on('mouseover', (_, d) => {
+        plot.selectAll(`#tooltip${d.date}`).attr('visibility', 'visible');
+      })
+      .on('mouseout', (_, d) => {
+        plot.selectAll(`#tooltip${d.date}`).attr('visibility', 'hidden');
+      });
 
-    // plot
-    //   .append('rect')
-    //   .attr('class', 'tooltip')
-    //   .attr('id', (d) => `tooltip${d.date}`)
-    //   .attr('x', (d) => xScale(d.date))
-    //   .attr('y', (d) => yScale(d.performance))
-    //   .attr('width', 21)
-    //   .attr('height', 12)
-    //   .attr('transform', `translate(1, 1)`)
-    //   .attr('dy', 5)
-    //   .attr('fill', 'black')
-    //   .attr('visibility', 'hidden');
+    plot
+      .append('rect')
+      .attr('class', 'tooltip')
+      .attr('id', (d) => `tooltip${d.date}`)
+      .attr('x', (d) => xScale(d.date))
+      .attr('y', (d) => yScale(d.performance))
+      .attr('width', 23)
+      .attr('height', 12)
+      .attr('transform', `translate(-23, 1)`)
+      .attr('dy', 5)
+      .attr('fill', 'black')
+      .attr('visibility', 'hidden');
 
-    // plot
-    //   .append('text')
-    //   .attr('class', 'tooltip')
-    //   .attr('id', (d) => `tooltip${d.date}`)
-    //   .attr('x', (d) => xScale(d.date))
-    //   .attr('y', (d) => yScale(d.performance))
-    //   .attr('transform', `translate(21, 5)`)
-    //   .attr('dy', 5)
-    //   .attr('fill', 'whitesmoke')
-    //   .attr('visibility', 'hidden')
-    //   .text((d) => d.performance);
+    plot
+      .append('text')
+      .attr('class', 'tooltip')
+      .attr('id', (d) => `tooltip${d.date}`)
+      .attr('x', (d) => xScale(d.date))
+      .attr('y', (d) => yScale(d.performance))
+      .attr('transform', `translate(0, 5)`)
+      .attr('dy', 5)
+      .attr('fill', 'whitesmoke')
+      .attr('visibility', 'hidden')
+      .text((d) => formatPerformance(d.performance, '400', []));
 
     // add axes
     plot
@@ -103,11 +121,24 @@ const EventPerformanceChart = () => {
       .attr('y', plotMargins.y / 2)
       .attr('text-anchor', 'middle')
       .text(chartTitle);
+
+    plot.exit().remove();
   };
 
   return (
-    <div className="svg">
-      <svg id="plot" className="container"></svg>
+    <div className="chartContainer">
+      <div className="chartControls small-text">
+        <div>Limit: {limit?.toFixed(2)}</div>
+        <div className="button increase" onClick={handlePerformanceLimitIncrease}>
+          Increase
+        </div>
+        <div className="button decrease" onClick={handlePerformanceLimitDecrease}>
+          Decrease
+        </div>
+      </div>
+      <div className="svg">
+        <svg id="plot" className="container"></svg>
+      </div>
     </div>
   );
 };
