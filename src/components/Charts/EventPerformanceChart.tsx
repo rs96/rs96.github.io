@@ -62,7 +62,10 @@ const EventPerformanceChart = () => {
       .axisBottom(xScale)
       .ticks((dateMax - dateMin) / msInYear)
       .tickFormat((d, i) => (i % 2 ? '' : getYearFromDate(d as number)));
-    const yAxis = d3.axisLeft(yScale).ticks(5);
+    const yAxis = d3
+      .axisLeft(yScale)
+      .ticks(5)
+      .tickFormat((d, i) => (i % 2 ? '' : (d as number).toFixed(0).toString()));
 
     plot
       .append('circle')
