@@ -19,13 +19,8 @@ const EventPerformanceChart = () => {
     }
   }, [filteredPerformances]);
 
-  //chart controls
-  const handlePerformanceLimitIncrease = () => {
-    setLimit(limit + 0.1);
-  };
-
-  const handlePerformanceLimitDecrease = () => {
-    setLimit(limit - 0.1);
+  const handlePerformanceLimitChange = (value: number) => () => {
+    setLimit(limit + value);
   };
 
   const drawGraph = (data: Performance[]) => {
@@ -132,10 +127,10 @@ const EventPerformanceChart = () => {
     <div className="chartContainer">
       <div className="chartControls small-text">
         <div>Limit: {limit?.toFixed(2)}</div>
-        <div className="button increase" onClick={handlePerformanceLimitIncrease}>
+        <div className="button increase" onClick={handlePerformanceLimitChange(0.1)}>
           Increase
         </div>
-        <div className="button decrease" onClick={handlePerformanceLimitDecrease}>
+        <div className="button decrease" onClick={handlePerformanceLimitChange(-0.1)}>
           Decrease
         </div>
       </div>
