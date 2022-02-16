@@ -4,13 +4,17 @@ import { useSelector } from 'react-redux';
 import { getPerformancesOfEventId } from '../../selectors/performances';
 import { msInYear } from '../../constants';
 import { formatPerformance, getYearFromDate } from '../../utils';
-import { Performance } from '../../types';
+import { Event, Performance } from '../../types';
 import './chart.css';
 
-const EventPerformanceChart = () => {
+interface Props {
+  event: Event;
+}
+
+const EventPerformanceChart = ({ event }: Props) => {
   const bigMaxPerformance = 999999;
   const plotMargins = { x: 20, y: 25 };
-  const performances = useSelector(getPerformancesOfEventId('1'));
+  const performances = useSelector(getPerformancesOfEventId(event.id));
   const [limit, setLimit] = useState(bigMaxPerformance);
   const filteredPerformances = performances.filter((performance) => performance.performance <= limit);
   useEffect(() => {
@@ -25,10 +29,10 @@ const EventPerformanceChart = () => {
 
   const drawGraph = (data: Performance[]) => {
     // to later become props
-    const chartTitle = '400m Performance';
+    const chartTitle = `${event.name}m Performance`;
 
     // @ts-ignore
-    const { width, height } = d3.select('svg').node().getBoundingClientRect();
+    const { width, height } = d3.select(`#eventchart${event.id}`).node().getBoundingClientRect();
     const dateMax = d3.max(data, (d) => d.date) as number;
     const dateMin = d3.min(data, (d) => d.date) as number;
     const performanceMax = d3.max(data, (d) => d.performance) as number;
@@ -49,7 +53,7 @@ const EventPerformanceChart = () => {
       .domain([performanceMin, performanceMax])
       .range([height - plotMargins.y, plotMargins.y]);
 
-    const graph = d3.select('svg');
+    const graph = d3.select(`#eventchart${event.id}`);
     graph.selectAll('*').remove();
     graph.attr('width', width).attr('height', height);
     const plot = graph.selectAll('g').data(data).enter();
@@ -98,7 +102,7 @@ const EventPerformanceChart = () => {
       .attr('dy', 5)
       .attr('fill', 'whitesmoke')
       .attr('visibility', 'hidden')
-      .text((d) => formatPerformance(d.performance, '400', []));
+      .text((d) => formatPerformance(d.performance, event.name, []));
 
     // add axes
     plot
@@ -125,6 +129,9 @@ const EventPerformanceChart = () => {
 
   return (
     <div className="chartContainer">
+      <div className="svg">
+        <svg id={`eventchart${event.id}`} className="chart"></svg>
+      </div>
       <div className="chartControls small-text">
         <div>Limit: {limit?.toFixed(2)}</div>
         <div className="button increase" onClick={handlePerformanceLimitChange(0.1)}>
@@ -133,10 +140,6 @@ const EventPerformanceChart = () => {
         <div className="button decrease" onClick={handlePerformanceLimitChange(-0.1)}>
           Decrease
         </div>
-      </div>
-      <div className="small-text">Chart resizing currently broken on mobile :(</div>
-      <div className="svg">
-        <svg id="plot" className="container"></svg>
       </div>
     </div>
   );
