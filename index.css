@@ -7,7 +7,7 @@ body {
 
 .main {
   width: 80vw;
-  min-width: 500px;
+  min-width: min(100vw, 500px);
   max-width: 1200px;
   height: 100%;
   margin: auto;
@@ -32,9 +32,33 @@ body {
   margin-bottom: unset;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px;
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  padding: 5px 8px;
+}
+
 .title {
   font-size: 40px;
-  padding: 5px 8px;
+}
+
+.subtle {
+  color: #555555;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.bio {
+  color: #555555;
+  border: unset;
 }
 
 .subtitle {
