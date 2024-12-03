@@ -60,13 +60,12 @@ body {
 .subtle {
   color: #555555;
   font-style: italic;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .bio {
   color: #555555;
   border: unset;
-  padding: unset;
   margin: 0 5px 8px;
 }
 
