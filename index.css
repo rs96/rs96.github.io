@@ -58,13 +58,13 @@ body {
 }
 
 .subtle {
-  color: #555555;
+  color: #333333;
   font-style: italic;
   font-size: 15px;
 }
 
 .bio {
-  color: #555555;
+  color: #333333;
   border: unset;
   margin: 0 5px 8px;
 }
